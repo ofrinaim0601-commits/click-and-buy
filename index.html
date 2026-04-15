@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Click & Buy - החנות שלך</title>
+    <style>
+        body { font-family: sans-serif; background-color: #f4f4f4; margin: 0; padding: 0; text-align: center; }
+        header { background: #222; color: white; padding: 20px; font-size: 24px; font-weight: bold; }
+        .container { display: flex; flex-wrap: wrap; justify-content: center; padding: 20px; }
+        .card { background: white; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); margin: 15px; padding: 20px; width: 300px; transition: 0.3s; }
+        .card:hover { transform: translateY(-5px); }
+        .card img { max-width: 100%; border-radius: 8px; }
+        .card h2 { font-size: 20px; margin: 15px 0; color: #333; }
+        .price { color: #e44d26; font-size: 18px; font-weight: bold; margin-bottom: 15px; }
+        .buy-btn { background: #28a745; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; text-decoration: none; display: inline-block; font-weight: bold; }
+        .buy-btn:hover { background: #218838; }
+    </style>
+</head>
+<body>
+
+<header>Click & Buy</header>
+
+<div class="container">
+    <div class="card">
+        <img src="https://via.placeholder.com/250x200?text=Product+Image" alt="מוצר">
+        <h2>שם המוצר שלך כאן</h2>
+        <div class="price">₪199</div>
+        <a href="הקישור-שלך-כאן" target="_blank" class="buy-btn">קנה עכשיו</a>
+    </div>
+</div>
+
+</body>
+</html>
