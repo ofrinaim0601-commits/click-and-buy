@@ -9,14 +9,12 @@
         :root { --primary: #ff4757; --dark: #121212; --card-bg: #1e1e1e; }
         body { font-family: 'Assistant', sans-serif; background-color: var(--dark); color: white; margin: 0; padding: 0; }
         
-        /* Header עם אפקט זכוכית */
-        header { background: rgba(0,0,0,0.8); backdrop-filter: blur(10px); padding: 40px 20px; text-align: center; sticky; top: 0; z-index: 100; border-bottom: 2px solid var(--primary); }
+        header { background: rgba(0,0,0,0.8); backdrop-filter: blur(10px); padding: 40px 20px; text-align: center; border-bottom: 2px solid var(--primary); }
         header h1 { margin: 0; font-size: 42px; letter-spacing: 2px; color: var(--primary); text-transform: uppercase; }
         header p { opacity: 0.8; font-size: 18px; }
 
-        .container { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; padding: 50px 10% ; }
+        .container { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; padding: 50px 10%; }
 
-        /* כרטיס מוצר מעוצב */
         .card { background: var(--card-bg); border-radius: 20px; overflow: hidden; transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); position: relative; border: 1px solid #333; cursor: pointer; }
         .card:hover { transform: scale(1.05); border-color: var(--primary); box-shadow: 0 10px 30px rgba(255, 71, 87, 0.3); }
         
@@ -27,11 +25,9 @@
         
         .badge { position: absolute; top: 15px; right: 15px; background: var(--primary); color: white; padding: 5px 15px; border-radius: 50px; font-weight: bold; font-size: 14px; }
 
-        /* כפתור רכישה */
         .buy-now { background: var(--primary); color: white; border: none; padding: 12px 30px; border-radius: 50px; font-size: 18px; font-weight: bold; cursor: pointer; text-decoration: none; display: inline-block; margin-top: 10px; transition: 0.3s; }
         .buy-now:hover { background: white; color: var(--primary); }
 
-        /* חלון הסבר (Modal) */
         .modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); overflow: auto; }
         .modal-content { background: #222; margin: 5% auto; padding: 30px; width: 80%; max-width: 800px; border-radius: 20px; position: relative; text-align: right; }
         .close { color: white; float: left; font-size: 40px; font-weight: bold; cursor: pointer; }
@@ -52,7 +48,7 @@
         <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=800" alt="אוזניות">
         <div class="card-info">
             <h3>Sony WH-1000XM6</h3>
-            <p>לחץ לצפייה בסרטון הסבר</p>
+            <p>לחץ לצפייה בסקירה המלאה</p>
             <div class="price">₪1,249</div>
             <a href="https://amzn.to/4sCX8cH" target="_blank" class="buy-now">קנה עכשיו באמזון</a>
         </div>
@@ -72,11 +68,11 @@
 <div id="sonyModal" class="modal">
     <div class="modal-content">
         <span class="close" onclick="closeModal('sonyModal')">&times;</span>
-        <h2>Sony WH-1000XM6 - סקירה מקצועית</h2>
+        <h2>Sony WH-1000XM6 - הסקירה של Marques Brownlee</h2>
         <div class="video-container">
-            <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/XbXXKhfvSF0" allowfullscreen></iframe>
         </div>
-        <p>האוזניות החדשות של סוני מציגות את ביטול הרעשים הטוב בעולם. סוללה ל-30 שעות, נוחות מקסימלית וסאונד שאי אפשר לתאר במילים.</p>
+        <p>הסוני XM6 מחזירות את הכתר! עם עיצוב מתקפל ונוח במיוחד, ביטול רעשים חזק יותר מאי פעם ואיכות סאונד מטורפת. צפה בסרטון כדי להבין למה אלו האוזניות הכי טובות שתוכל לקנות היום.</p>
         <a href="https://amzn.to/4sCX8cH" target="_blank" class="buy-now">אוקיי, אני רוצה לקנות!</a>
     </div>
 </div>
