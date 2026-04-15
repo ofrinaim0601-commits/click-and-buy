@@ -3,30 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Click & Buy - החנות שלך</title>
+    <title>Click & Buy - המבצעים הכי חמים</title>
     <style>
-        body { font-family: sans-serif; background-color: #f4f4f4; margin: 0; padding: 0; text-align: center; }
-        header { background: #222; color: white; padding: 20px; font-size: 24px; font-weight: bold; }
-        .container { display: flex; flex-wrap: wrap; justify-content: center; padding: 20px; }
-        .card { background: white; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); margin: 15px; padding: 20px; width: 300px; transition: 0.3s; }
-        .card:hover { transform: translateY(-5px); }
-        .card img { max-width: 100%; border-radius: 8px; }
-        .card h2 { font-size: 20px; margin: 15px 0; color: #333; }
-        .price { color: #e44d26; font-size: 18px; font-weight: bold; margin-bottom: 15px; }
-        .buy-btn { background: #28a745; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; text-decoration: none; display: inline-block; font-weight: bold; }
-        .buy-btn:hover { background: #218838; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #f0f2f5; margin: 0; text-align: center; color: #333; }
+        header { background: linear-gradient(135deg, #222, #444); color: white; padding: 40px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+        header h1 { margin: 0; font-size: 36px; }
+        .subtitle { font-size: 18px; opacity: 0.9; margin-top: 10px; }
+        .container { display: flex; flex-wrap: wrap; justify-content: center; padding: 40px; gap: 30px; }
+        .card { background: white; border-radius: 15px; box-shadow: 0 8px 20px rgba(0,0,0,0.1); width: 300px; overflow: hidden; transition: transform 0.3s; }
+        .card:hover { transform: translateY(-10px); }
+        .card img { width: 100%; height: 200px; object-fit: cover; }
+        .card-content { padding: 20px; }
+        .card h2 { font-size: 22px; margin: 0 0 10px; color: #222; }
+        .price { color: #e44d26; font-size: 24px; font-weight: bold; margin: 15px 0; }
+        .buy-btn { background: #ff4757; color: white; padding: 12px 25px; border-radius: 50px; text-decoration: none; display: inline-block; font-weight: bold; transition: background 0.3s; }
+        .buy-btn:hover { background: #ff6b81; }
     </style>
 </head>
 <body>
 
-<header>Click & Buy</header>
+<header>
+    <h1>Click & Buy</h1>
+    <div class="subtitle">המוצרים הכי נמכרים ברשת במחירים ללא תחרות</div>
+</header>
 
 <div class="container">
     <div class="card">
-        <img src="https://via.placeholder.com/250x200?text=Product+Image" alt="מוצר">
-        <h2>שם המוצר שלך כאן</h2>
-        <div class="price">₪199</div>
-        <a href="הקישור-שלך-כאן" target="_blank" class="buy-btn">קנה עכשיו</a>
+        <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500" alt="אוזניות">
+        <div class="card-content">
+            <h2>אוזניות Sony XM6</h2>
+            <p>סאונד איכותי עם ביטול רעשים אקטיבי וסוללה חזקה.</p>
+            <div class="price">₪1,249</div>
+            <a href="https://amzn.to/4sCX8cH" target="_blank" class="buy-btn">לרכישה באמזון</a>
+        </div>
+    </div>
+
+    <div class="card">
+        <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500" alt="שעון">
+        <div class="card-content">
+            <h2>שעון חכם ספורטיבי</h2>
+            <p>עמיד במים, מודד דופק ומסנכרן התראות מהנייד.</p>
+            <div class="price">₪399</div>
+            <a href="#" class="buy-btn">לרכישה במבצע</a>
+        </div>
     </div>
 </div>
 
