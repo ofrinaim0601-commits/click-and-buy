@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fidget & Fun | הצעצועים הכי ויראליים</title>
+    <title>Fidget & Fun | עולם הסקווישים</title>
     <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;700;800&display=swap" rel="stylesheet">
     <style>
         :root { --neon-pink: #ff00ff; --neon-blue: #00d4ff; --bg: #0a0a0c; --card: #16161a; }
@@ -18,99 +18,53 @@
         .card { background: var(--card); border-radius: 25px; overflow: hidden; position: relative; border: 2px solid #333; transition: 0.3s; cursor: pointer; }
         .card:hover { transform: translateY(-10px); border-color: var(--neon-blue); box-shadow: 0 0 25px var(--neon-blue); }
         
-        .card img { width: 100%; height: 220px; object-fit: cover; border-bottom: 2px solid #333; }
+        .card img { width: 100%; height: 280px; object-fit: cover; border-bottom: 2px solid #333; }
         .card-info { padding: 20px; text-align: center; }
         .card h3 { font-size: 22px; margin: 10px 0; color: #fff; }
         .price { font-size: 30px; font-weight: 800; color: var(--neon-pink); margin: 10px 0; }
         
         .buy-now { background: linear-gradient(45deg, var(--neon-pink), #ff4757); color: white; border: none; padding: 15px 35px; border-radius: 50px; font-size: 20px; font-weight: 800; cursor: pointer; text-decoration: none; display: inline-block; transition: 0.3s; box-shadow: 0 5px 15px rgba(255, 0, 255, 0.4); }
         .buy-now:hover { transform: scale(1.1); box-shadow: 0 0 30px var(--neon-pink); }
-
-        .modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.95); }
-        .modal-content { background: #1a1a1e; margin: 5% auto; padding: 30px; width: 90%; max-width: 700px; border-radius: 30px; text-align: right; border: 2px solid var(--neon-blue); }
-        .close { color: white; float: left; font-size: 40px; font-weight: bold; cursor: pointer; }
-        .video-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; margin: 20px 0; border-radius: 20px; border: 2px solid #444; }
-        .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none; }
     </style>
 </head>
 <body>
 
 <header>
     <h1>Fidget & Fun ✨</h1>
-    <p>הדברים הכי ויראליים בטיקטוק - עכשיו אצלכם בידיים!</p>
+    <p>אוסף הסקווישים המטורף שלנו!</p>
 </header>
 
 <div class="container">
-    <div class="card" onclick="openModal('knifeModal')">
-        <img src="https://m.media-amazon.com/images/I/61m0Kx0C7DL._AC_SL1500_.jpg" alt="Plastic Butterfly Knife">
-        <div class="card-info">
-            <h3>סכין פרפר Gravity</h3>
-            <p>משחק מטורף לידיים (ללא להב!)</p>
-            <div class="price">₪35</div>
-            <a href="https://amzn.to/3X8S5h4" target="_blank" class="buy-now">אני רוצה כזה!</a>
-        </div>
-    </div>
-
-    <div class="card" onclick="openModal('fruitModal')">
-        <img src="https://m.media-amazon.com/images/I/71Xm04I6IeL._AC_SL1500_.jpg" alt="NeeDoh Groovy Fruit">
+    <div class="card">
+        <img src="https://m.media-amazon.com/images/I/71Xm04I6IeL._AC_SL1500_.jpg" alt="NeeDoh Fruit">
         <div class="card-info">
             <h3>פירות לחיצים Groovy</h3>
-            <p>ה-Stress Ball הכי נעים בעולם</p>
+            <p>חבילת 3 פירות לחיצים ונעימים</p>
             <div class="price">₪55</div>
             <a href="https://amzn.to/4vsDiDz" target="_blank" class="buy-now">קנה עכשיו</a>
         </div>
     </div>
 
-    <div class="card" onclick="openModal('fidgetModal')">
-        <img src="https://m.media-amazon.com/images/I/61NlE1X7vFL._AC_SL1500_.jpg" alt="Fidget Cube">
+    <div class="card">
+        <img src="https://m.media-amazon.com/images/I/61dDzQc6xxL._AC_SL1500_.jpg" alt="Animal Squishy">
         <div class="card-info">
-            <h3>קובית פידג'ט פרימיום</h3>
-            <p>מושלם לריכוז בזמן לימודים</p>
-            <div class="price">₪49</div>
-            <a href="https://amzn.to/3Z9L2a1" target="_blank" class="buy-now">אני רוצה!</a>
+            <h3>סקווישי חיות ענקי</h3>
+            <p>Slow Rising - חוזר לצורה לאט לאט</p>
+            <div class="price">₪42</div>
+            <a href="https://amzn.to/4t8yyl0" target="_blank" class="buy-now">אני רוצה כזה</a>
         </div>
     </div>
 
-    <div class="card" onclick="openModal('springModal')">
-        <img src="https://m.media-amazon.com/images/I/71yRBeS3qSL._AC_SL1500_.jpg" alt="Slinky">
+    <div class="card">
+        <img src="https://m.media-amazon.com/images/I/71m67Yf29eL._AC_SL1500_.jpg" alt="Rainbow Squishy">
         <div class="card-info">
-            <h3>קפיץ מתכת ענקי</h3>
-            <p>המשחק הקלאסי בגרסת מתכת</p>
-            <div class="price">₪25</div>
-            <a href="https://amzn.to/4fR9Z2m" target="_blank" class="buy-now">למבצע</a>
+            <h3>סקווישי סמיילי צבעוני</h3>
+            <p>הכי ויראלי בטיקטוק - רך בטירוף</p>
+            <div class="price">₪38</div>
+            <a href="https://amzn.to/4tPsM7K" target="_blank" class="buy-now">למבצע באמזון</a>
         </div>
     </div>
 </div>
-
-<div id="knifeModal" class="modal">
-    <div class="modal-content">
-        <span class="close" onclick="closeModal('knifeModal')">&times;</span>
-        <h2>סכין פרפר תלת-מימדית</h2>
-        <div class="video-container">
-            <iframe src="https://www.youtube.com/embed/BvHq5R1Vq0U" allowfullscreen></iframe>
-        </div>
-        <p>להיט הטיקטוק! סכין פלסטיק בטיחותית לטריקים ופידג'ט.</p>
-        <a href="https://amzn.to/3X8S5h4" target="_blank" class="buy-now">קנה עכשיו</a>
-    </div>
-</div>
-
-<div id="fruitModal" class="modal">
-    <div class="modal-content">
-        <span class="close" onclick="closeModal('fruitModal')">&times;</span>
-        <h2>NeeDoh Groovy Fruit</h2>
-        <div class="video-container">
-            <iframe src="https://www.youtube.com/embed/3nJ_mK4pI-I" allowfullscreen></iframe>
-        </div>
-        <p>שלושה פירות לחיצים (בננה, תות ותפוז) עם מרקם ג'ל ייחודי שחוזר לצורתו המקורית לאט. כיף מטורף!</p>
-        <a href="https://amzn.to/4vsDiDz" target="_blank" class="buy-now">אני רוצה את הפירות!</a>
-    </div>
-</div>
-
-<script>
-    function openModal(id) { document.getElementById(id).style.display = "block"; }
-    function closeModal(id) { document.getElementById(id).style.display = "none"; }
-    window.onclick = function(event) { if (event.target.className === 'modal') { event.target.style.display = "none"; } }
-</script>
 
 </body>
 </html>
