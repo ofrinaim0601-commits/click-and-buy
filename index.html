@@ -3,68 +3,115 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fidget & Fun | עולם הסקווישים</title>
+    <title>Fidget & Fun | קניון הצעצועים הוויראליים</title>
     <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;700;800&display=swap" rel="stylesheet">
     <style>
         :root { --neon-pink: #ff00ff; --neon-blue: #00d4ff; --bg: #0a0a0c; --card: #16161a; }
-        body { font-family: 'Assistant', sans-serif; background-color: var(--bg); color: white; margin: 0; overflow-x: hidden; }
+        body { font-family: 'Assistant', sans-serif; background-color: var(--bg); color: white; margin: 0; }
         
-        header { background: linear-gradient(90deg, #ff00ff, #00d4ff); padding: 50px 20px; text-align: center; box-shadow: 0 0 20px rgba(0,212,255,0.5); }
-        header h1 { margin: 0; font-size: 50px; font-weight: 800; text-shadow: 2px 2px 10px rgba(0,0,0,0.5); }
-        header p { font-size: 20px; font-weight: 700; margin-top: 10px; }
+        header { background: linear-gradient(90deg, #ff00ff, #00d4ff); padding: 40px 20px; text-align: center; box-shadow: 0 0 20px rgba(0,212,255,0.5); }
+        header h1 { margin: 0; font-size: 45px; font-weight: 800; }
 
-        .container { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; padding: 40px 10%; }
+        .section-title { text-align: center; margin: 40px 0; font-size: 32px; color: var(--neon-blue); }
 
-        .card { background: var(--card); border-radius: 25px; overflow: hidden; position: relative; border: 2px solid #333; transition: 0.3s; cursor: pointer; }
-        .card:hover { transform: translateY(-10px); border-color: var(--neon-blue); box-shadow: 0 0 25px var(--neon-blue); }
+        /* דף הבית */
+        .categories-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; padding: 0 10% 50px; }
+        .category-card { background: linear-gradient(145deg, #1e1e24, #16161a); border-radius: 30px; padding: 40px; text-align: center; border: 2px solid #333; cursor: pointer; transition: 0.4s; }
+        .category-card:hover { transform: scale(1.05); border-color: var(--neon-pink); box-shadow: 0 0 30px rgba(255, 0, 255, 0.3); }
+
+        /* דף מוצרים */
+        #products-page { display: none; padding: 40px 10%; }
+        .products-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; }
         
-        .card img { width: 100%; height: 280px; object-fit: cover; border-bottom: 2px solid #333; }
-        .card-info { padding: 20px; text-align: center; }
-        .card h3 { font-size: 22px; margin: 10px 0; color: #fff; }
-        .price { font-size: 30px; font-weight: 800; color: var(--neon-pink); margin: 10px 0; }
+        .product-card { background: var(--card); border-radius: 20px; overflow: hidden; border: 1px solid #333; text-align: center; transition: 0.3s; }
+        .product-card img { width: 100%; height: 250px; object-fit: contain; background: white; }
+        .product-info { padding: 15px; }
+        .price { font-size: 24px; font-weight: 800; color: var(--neon-pink); margin: 10px 0; }
         
-        .buy-now { background: linear-gradient(45deg, var(--neon-pink), #ff4757); color: white; border: none; padding: 15px 35px; border-radius: 50px; font-size: 20px; font-weight: 800; cursor: pointer; text-decoration: none; display: inline-block; transition: 0.3s; box-shadow: 0 5px 15px rgba(255, 0, 255, 0.4); }
-        .buy-now:hover { transform: scale(1.1); box-shadow: 0 0 30px var(--neon-pink); }
+        .buy-btn { background: var(--neon-blue); color: black; border: none; padding: 10px 25px; border-radius: 50px; font-weight: 800; text-decoration: none; display: inline-block; }
+        .back-btn { background: none; color: white; border: 2px solid white; padding: 10px 20px; border-radius: 50px; cursor: pointer; margin-bottom: 20px; }
     </style>
 </head>
 <body>
 
-<header>
-    <h1>Fidget & Fun ✨</h1>
-    <p>אוסף הסקווישים המטורף שלנו!</p>
-</header>
-
-<div class="container">
-    <div class="card">
-        <img src="https://m.media-amazon.com/images/I/71Xm04I6IeL._AC_SL1500_.jpg" alt="NeeDoh Fruit">
-        <div class="card-info">
-            <h3>פירות לחיצים Groovy</h3>
-            <p>חבילת 3 פירות לחיצים ונעימים</p>
-            <div class="price">₪55</div>
-            <a href="https://amzn.to/4vsDiDz" target="_blank" class="buy-now">קנה עכשיו</a>
+<div id="home-page">
+    <header><h1>Fidget & Fun ✨</h1></header>
+    <h2 class="section-title">בחר קטגוריה</h2>
+    <div class="categories-grid">
+        <div class="category-card" onclick="showProducts()">
+            <h2>🌈 עולם הסקווישים</h2>
+            <p>5 מוצרים ויראליים שחייבים ללחוץ!</p>
         </div>
-    </div>
-
-    <div class="card">
-        <img src="https://m.media-amazon.com/images/I/61dDzQc6xxL._AC_SL1500_.jpg" alt="Animal Squishy">
-        <div class="card-info">
-            <h3>סקווישי חיות ענקי</h3>
-            <p>Slow Rising - חוזר לצורה לאט לאט</p>
-            <div class="price">₪42</div>
-            <a href="https://amzn.to/4t8yyl0" target="_blank" class="buy-now">אני רוצה כזה</a>
-        </div>
-    </div>
-
-    <div class="card">
-        <img src="https://m.media-amazon.com/images/I/71m67Yf29eL._AC_SL1500_.jpg" alt="Rainbow Squishy">
-        <div class="card-info">
-            <h3>סקווישי סמיילי צבעוני</h3>
-            <p>הכי ויראלי בטיקטוק - רך בטירוף</p>
-            <div class="price">₪38</div>
-            <a href="https://amzn.to/4tPsM7K" target="_blank" class="buy-now">למבצע באמזון</a>
+        <div class="category-card" style="opacity: 0.5;">
+            <h2>🎮 פידג'טים (בקרוב)</h2>
+            <p>משחקי ידיים וקליקים</p>
         </div>
     </div>
 </div>
+
+<div id="products-page">
+    <button class="back-btn" onclick="showHome()">← חזרה</button>
+    <h2 style="color: var(--neon-pink);">אוסף הסקווישים שלנו</h2>
+    <div class="products-grid">
+        
+        <div class="product-card">
+            <img src="https://m.media-amazon.com/images/I/61NfT-jNidL._AC_SL1000_.jpg">
+            <div class="product-info">
+                <h3>חבילת פירות Groovy</h3>
+                <div class="price">₪55</div>
+                <a href="https://amzn.to/4vsDiDz" target="_blank" class="buy-btn">קנה עכשיו</a>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <img src="https://m.media-amazon.com/images/I/71m67Yf29eL._AC_SL1500_.jpg">
+            <div class="product-info">
+                <h3>סקווישי צבעוני מחייך</h3>
+                <div class="price">₪38</div>
+                <a href="https://amzn.to/4tPsM7K" target="_blank" class="buy-btn">קנה עכשיו</a>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <img src="https://m.media-amazon.com/images/I/61dDzQc6xxL._AC_SL1500_.jpg">
+            <div class="product-info">
+                <h3>סקווישי חיות ענקי</h3>
+                <div class="price">₪42</div>
+                <a href="https://amzn.to/4t8yyl0" target="_blank" class="buy-btn">קנה עכשיו</a>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <img src="https://m.media-amazon.com/images/I/71U1T0pG-HL._AC_SL1500_.jpg">
+            <div class="product-info">
+                <h3>סקווישי לחם קלוי</h3>
+                <div class="price">₪30</div>
+                <a href="https://amzn.to/4tUoKez" target="_blank" class="buy-btn">קנה עכשיו</a>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <img src="https://m.media-amazon.com/images/I/71iM2T2B-KL._AC_SL1500_.jpg">
+            <div class="product-info">
+                <h3>סקווישי חמאה מלוחה</h3>
+                <div class="price">₪32</div>
+                <a href="https://amzn.to/3Qc8yXs" target="_blank" class="buy-btn">קנה עכשיו</a>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script>
+    function showProducts() {
+        document.getElementById('home-page').style.display = 'none';
+        document.getElementById('products-page').style.display = 'block';
+    }
+    function showHome() {
+        document.getElementById('home-page').style.display = 'block';
+        document.getElementById('products-page').style.display = 'none';
+    }
+</script>
 
 </body>
 </html>
